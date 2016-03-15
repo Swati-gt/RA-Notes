@@ -2,8 +2,8 @@
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Verdana;
 \f3\fnil\fcharset0 Consolas;\f4\fnil\fcharset0 Consolas-Italic;\f5\fswiss\fcharset0 ArialMT;
 }
-{\colortbl;\red255\green255\blue255;\red37\green37\blue37;\red234\green234\blue234;\red83\green85\blue2;
-\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue255;\red250\green234\blue173;\red106\green0\blue67;
+{\colortbl;\red255\green255\blue255;\red234\green234\blue234;\red37\green37\blue37;\red83\green85\blue2;
+\red255\green255\blue255;\red0\green0\blue0;\red250\green234\blue173;\red0\green0\blue255;\red106\green0\blue67;
 \red11\green84\blue83;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
@@ -17,129 +17,129 @@ Order: ID, Customer ID, Date, Amount\
 \
 \pard\pardeftab720\sl320
 
-\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 FROM table1\
 INNER JOIN table2\
-ON table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+ON table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 2) 
-\f2\b\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 LEFT JOIN
+\f2\b\fs30 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 LEFT JOIN
 \b0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  returns all rows from the left table, even if there are no matches in the right table.\
 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 FROM table1\
 LEFT JOIN table2\
-ON table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+ON table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 3) 
-\f2\b\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 RIGHT JOIN
+\f2\b\fs30 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 RIGHT JOIN
 \b0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  returns all rows from the right table, even if there are no matches in the left table.
-\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\f0\fs24 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 \
 \pard\pardeftab720\sl320
 
-\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 FROM table1\
 RIGHT JOIN table2\
-ON table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+ON table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 4) 
-\f2\b\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 FULL JOIN
+\f2\b\fs30 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 FULL JOIN
 \b0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  combines the results of both left and right outer joins.\
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 FROM table1\
 FULL JOIN table2\
-ON table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+ON table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\pardeftab720\li60\ri60\sl480\sa300\qj
-\cf5 \cb1 \expnd0\expndtw0\kerning0
+\cf0 \cb1 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 If your Database does not support FULL JOIN like MySQL does not support FULL JOIN, then you can use 
 \b \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 UNION ALL
@@ -147,46 +147,46 @@ ON table1\cf4 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  clause to combine two JOINS as follows:\
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SQL\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 >\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  SELECT  ID\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  NAME\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  AMOUNT\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  DATE\
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SQL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 >\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  SELECT  ID\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  NAME\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  AMOUNT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  DATE\
      FROM CUSTOMERS\
      LEFT JOIN ORDERS\
-     ON CUSTOMERS\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ID \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  ORDERS\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 CUSTOMER_ID\
+     ON CUSTOMERS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ID \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  ORDERS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 CUSTOMER_ID\
 UNION ALL\
-     SELECT  ID\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  NAME\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  AMOUNT\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  DATE\
+     SELECT  ID\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  NAME\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  AMOUNT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  DATE\
      FROM CUSTOMERS\
      RIGHT JOIN ORDERS\
-     ON CUSTOMERS\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ID \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  ORDERS\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 CUSTOMER_ID\
+     ON CUSTOMERS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ID \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  ORDERS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 CUSTOMER_ID\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 5)
 \b \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 SELF JOIN
@@ -194,32 +194,32 @@ UNION ALL\
 \outl0\strokewidth0  is used to join a table to itself as if the table were two tables\
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT a\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column_name\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  b\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column_name\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-FROM table1 a\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table1 b\
-WHERE a\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 =\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  b\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 common_field\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT a\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column_name\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  b\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column_name\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+FROM table1 a\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table1 b\
+WHERE a\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 =\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  b\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 common_field\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 6)
 \b \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 CARTESIAN JOIN
@@ -231,160 +231,160 @@ WHERE a\cf4 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  returns the Cartesian product of the sets of records from the two or more joined tables. \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 .\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-FROM  table1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table3 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 .\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+FROM  table1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 7) Left Excluding JOIN\
 \pard\pardeftab720
 
-\f3\fs24 \cf7 \cb8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 SELECT\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  
+\f3\fs24 \cf0 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 SELECT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  
 \f4\i \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 <select_list>
 \f3\i0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  \
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 FROM\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  Table_A A\
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 LEFT\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 JOIN\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  Table_B B\
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ON\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  A.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  = B.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 WHERE\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  B.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 IS\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 NULL\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 FROM\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  Table_A A\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 LEFT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 JOIN\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  Table_B B\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ON\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  A.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  = B.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 WHERE\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  B.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 IS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 8) Right Excluding JOIN\
 \pard\pardeftab720
 
-\f3\fs24 \cf7 \cb8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 SELECT\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  
+\f3\fs24 \cf0 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 SELECT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  
 \f4\i \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 <select_list>
 \f3\i0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 FROM\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  Table_A A\
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 RIGHT\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 JOIN\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  Table_B B\
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ON\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  A.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  = B.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 WHERE\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  A.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 IS\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 NULL\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 FROM\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  Table_A A\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 RIGHT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 JOIN\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  Table_B B\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ON\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  A.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  = B.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 WHERE\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  A.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 IS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \
 9) Outer Excluding JOIN\
 \pard\pardeftab720
 
-\f3\fs24 \cf7 \cb8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 SELECT\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  
+\f3\fs24 \cf0 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 SELECT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  
 \f4\i \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 <select_list>
 \f3\i0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 FROM\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  Table_A A\
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 FULL\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 OUTER\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 JOIN\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  Table_B B\
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ON\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  A.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  = B.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
-\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 WHERE\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  A.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 IS\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 NULL\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 OR\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  B.\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 Key\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 IS\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 NULL\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 FROM\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  Table_A A\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 FULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 OUTER\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 JOIN\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  Table_B B\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ON\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  A.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  = B.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 WHERE\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  A.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 IS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 OR\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  B.\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Key\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 IS\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \
 10) ORDER BY\
 \pard\pardeftab720\sl448
 
-\f3\fs32 \cf5 \expnd0\expndtw0\kerning0
+\f3\fs32 \cf0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 SELECT * FROM Customers\cb1 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
-\cb6 \expnd0\expndtw0\kerning0
+\cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 ORDER BY Country ASC, CustomerName DESC;\
 \
 11) 
@@ -393,309 +393,309 @@ FROM  table1\cf4 \expnd0\expndtw0\kerning0
 \b0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  clause/operator is used to combine the results of two or more SELECT statements without returning any duplicate rows.\
 \pard\pardeftab720\li60\ri60\sl480\sa300\qj
-\cf5 To use UNION, each SELECT must have the same number of columns selected, the same number of column expressions, the same data type, and have them in the same order, but they do not have to be the same length.\
+\cf0 To use UNION, each SELECT must have the same number of columns selected, the same number of column expressions, the same data type, and have them in the same order, but they do not have to be the same length.\
 \pard\pardeftab720\sl448
-\cf5 \cb6 \expnd0\expndtw0\kerning0
+\cf0 \cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT column1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  column2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-FROM table1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT column1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  column2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+FROM table1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl320
-\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 WHERE condition\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 WHERE condition\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \
 UNION\
 \
-SELECT column1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  column2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-FROM table1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 WHERE condition\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+SELECT column1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  column2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+FROM table1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 WHERE condition\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl448
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 12) \cb1 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 The 
 \b \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 UNION ALL
 \b0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0  operator is used to combine the results of two SELECT statements including duplicate rows.\
-\cb6 \expnd0\expndtw0\kerning0
+\cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT column1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  column2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-FROM table1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT column1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  column2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+FROM table1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl320
-\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 WHERE condition\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 WHERE condition\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \
 UNION ALL\
 \
-SELECT column1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  column2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-FROM table1 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  table2 \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 [\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 WHERE condition\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ]\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+SELECT column1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  column2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+FROM table1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  table2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 WHERE condition\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ]\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl448
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 13) INDEXES an index is a pointer to data in a table. For faster searches. When index is created, it is assigned a ROWID for each row before it sorts out the data.\
 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 CREATE INDEX index_name\
-on table_name \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 );\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 CREATE INDEX index_name\
+on table_name \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 );\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl448
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 14) 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ALTER TABLE table_name ADD column_name datatype\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ALTER TABLE table_name ADD column_name datatype\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl320
-\cf2 \
-ALTER TABLE table_name DROP COLUMN column_name\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\cf0 \
+ALTER TABLE table_name DROP COLUMN column_name\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \
-ALTER TABLE table_name MODIFY COLUMN column_name datatype\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+ALTER TABLE table_name MODIFY COLUMN column_name datatype\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \
-ALTER TABLE table_name MODIFY column_name datatype NOT NULL\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+ALTER TABLE table_name MODIFY column_name datatype NOT NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl448
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ALTER TABLE table_name \
-ADD CONSTRAINT \cf9 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec9 MyPrimaryKey\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  PRIMARY KEY \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 column1\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  column2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ...);\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ALTER TABLE table_name \
+ADD CONSTRAINT \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 MyPrimaryKey\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  PRIMARY KEY \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 column1\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  column2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ...);\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl448
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ALTER TABLE ORDERS \
-   ADD FOREIGN KEY \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf9 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec9 Customer_ID\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 )\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  REFERENCES CUSTOMERS \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ID\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 );\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ALTER TABLE ORDERS \
+   ADD FOREIGN KEY \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Customer_ID\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 )\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  REFERENCES CUSTOMERS \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ID\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 );\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl448
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
-\cf5 \
+\cf0 \
 15) Constraints \cb1 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 This ensures the accuracy and reliability of the data in the database.\
-\cb6 \expnd0\expndtw0\kerning0
+\cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2        ID   INT              NOT NULL\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-       NAME VARCHAR \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 20\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 )\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2      NOT NULL\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-       AGE  INT              NOT NULL\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-       ADDRESS  CHAR \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 25\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 )\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-       SALARY   DECIMAL \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 18\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  \cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ),\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2        \
-       PRIMARY KEY \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ID\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 )\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3        ID   INT              NOT NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+       NAME VARCHAR \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 20\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 )\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3      NOT NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+       AGE  INT              NOT NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+       ADDRESS  CHAR \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 25\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 )\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+       SALARY   DECIMAL \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 18\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ),\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3        \
+       PRIMARY KEY \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ID\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 )\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl320
-\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 );\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 );\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 \pard\pardeftab720\sl320
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ALTER TABLE CUSTOMERS\
-   MODIFY SALARY  DECIMAL \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 18\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  \cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 2\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 )\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  NOT NULL\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ALTER TABLE CUSTOMERS\
+   MODIFY SALARY  DECIMAL \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 18\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 2\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 )\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  NOT NULL\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 \
+\f2\fs30 \cf0 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
 
-\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\f0\fs24 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 \pard\pardeftab720\sl320
 
-\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ALTER TABLE CUSTOMERS\
-   ALTER COLUMN SALARY DROP DEFAULT\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ALTER TABLE CUSTOMERS\
+   ALTER COLUMN SALARY DROP DEFAULT\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 \pard\pardeftab720\sl320
 
-\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ALTER TABLE CUSTOMER ADD PRIMARY KEY \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 ID\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 );\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ALTER TABLE CUSTOMER ADD PRIMARY KEY \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 ID\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 );\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 \
 16)  
-\f2\fs30 \cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Views, which are kind of virtual tables, allow users to do the following:\
+\f2\fs30 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Views, which are kind of virtual tables, allow users to do the following:\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\ri60\sl480\sa300\qj
-\ls1\ilvl0\cf5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Structure data in a way that users or classes of users find natural or intuitive.\uc0\u8232 
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Structure data in a way that users or classes of users find natural or intuitive.\uc0\u8232 
 \fs28 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \ls1\ilvl0
 \fs30 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Restrict access to the data such that a user can see and (sometimes) modify exactly what they need and no more.\uc0\u8232 
+\outl0\strokewidth0 \strokec6 Restrict access to the data such that a user can see and (sometimes) modify exactly what they need and no more.\uc0\u8232 
 \fs28 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \ls1\ilvl0
 \fs30 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Summarize data from various tables which can be used to generate reports.\uc0\u8232 
+\outl0\strokewidth0 \strokec6 Summarize data from various tables which can be used to generate reports.\uc0\u8232 
 \fs28 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f1\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 CREATE VIEW CUSTOMERS_VIEW AS\
+\f1\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 CREATE VIEW CUSTOMERS_VIEW AS\
 \pard\pardeftab720\sl320
-\cf2 SELECT name\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ,\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  age\
+\cf0 SELECT name\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ,\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  age\
 FROM  CUSTOMERS\
 WHERE age IS NOT NULL\
-WITH CHECK OPTION\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+WITH CHECK OPTION\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
 \
 17) 
-\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SAVEPOINT SAVEPOINT_NAME\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\f1 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SAVEPOINT SAVEPOINT_NAME\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\pardeftab720\sl320
-\cf2 ROLLBACK TO SAVEPOINT_NAME\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\cf0 ROLLBACK TO SAVEPOINT_NAME\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
@@ -704,23 +704,23 @@ WITH CHECK OPTION\cf4 \expnd0\expndtw0\kerning0
 \
 \pard\pardeftab720\sl320
 
-\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 *\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  \
+\f1 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 *\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  \
      FROM CUSTOMERS \
-     WHERE ID IN \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 (\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT ID \
+     WHERE ID IN \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 (\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 SELECT ID \
                   FROM CUSTOMERS \
-                  WHERE SALARY \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 >\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  \cf10 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 4500\cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 )\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2  \cf4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 ;\cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+                  WHERE SALARY \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 >\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 4500\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 )\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ;\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
