@@ -1,0 +1,1068 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 ArialMT;
+\f3\fnil\fcharset0 Monaco;\f4\fmodern\fcharset0 Courier;\f5\fnil\fcharset0 Consolas;
+}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red28\green0\blue207;\red0\green116\blue0;
+\red196\green26\blue22;\red0\green0\blue0;\red245\green245\blue245;\red38\green38\blue38;\red53\green65\blue117;
+\red14\green110\blue109;\red17\green137\blue135;\red255\green255\blue255;\red246\green246\blue246;}
+\margl1440\margr1440\vieww14200\viewh16200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+{\field{\*\fldinst{HYPERLINK "http://algs4.cs.princeton.edu/lectures/35SearchingApplications-2x2.pdf"}}{\fldrslt 
+\f0\fs24 \cf0 http://algs4.cs.princeton.edu/lectures/35SearchingApplications-2x2.pdf}}
+\f0\fs24 \
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf2 \CocoaLigature0 public\cf0  \cf2 class\cf0  Board \{\
+    \cf2 private\cf0  \cf2 static\cf0  \cf2 final\cf0  \cf2 int\cf0  BLANK = \cf3 0\cf0 ;   \cf4 // the blank square\cf0 \
+\
+    \cf2 private\cf0  \cf2 final\cf0  \cf2 int\cf0  N;            \cf4 // the board size\cf0 \
+    \cf2 private\cf0  \cf2 int\cf0  manhattan = \cf3 -1\cf0 ;     \cf4 // cache the Manhattan distance\cf0 \
+    \cf2 private\cf0  \cf2 final\cf0  \cf2 int\cf0 [] tiles;     \
+
+\f0\fs24 \CocoaLigature1 \
+
+\f1\fs22 \cf4 \CocoaLigature0 // string representation\cf0 \
+    \cf2 public\cf0  String toString() \{\
+        StringBuilder s = \cf2 new\cf0  StringBuilder();\
+        s.append(N + \cf5 "\\n"\cf0 );\
+        \cf2 for\cf0  (\cf2 int\cf0  k = \cf3 0\cf0 ; k < N*N; k++)\
+            s.append(String.format(\cf5 "%2d "\cf0 , tiles[k]));\
+        s.append(\cf5 "\\n"\cf0 );\
+        \cf2 return\cf0  s.toString();\
+    \}\
+\
+\pard\pardeftab720\sl384
+
+\f2\fs26 \cf6 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec6 \}\
+\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf2 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 private\cf0  ST<Integer, String> synsets = \cf2 new\cf0  ST<Integer, String>();
+\f2\fs26 \cf6 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec6 \
+
+\f1\fs22 \cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0     \cf2 private\cf0  \cf2 void\cf0  buildMap(String synsetFile) \{
+\f2\fs26 \cf6 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec6 \
+
+\f1\fs22 \cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0  		In in = \cf2 new\cf0  In(synsetFile);\
+        \cf2 while\cf0  (!in.isEmpty()) \{\
+            String line = in.readLine();\
+            String[] tokens = line.split(\cf5 ","\cf0 );\
+            \cf2 int\cf0     id     = Integer.parseInt(tokens[\cf3 0\cf0 ]);\
+            String synset = tokens[\cf3 1\cf0 ];\
+            String defn   = tokens[\cf3 2\cf0 ];\
+\
+\
+\cf4 // find maximum id number\cf0 \
+            \cf2 if\cf0  (id + \cf3 1\cf0  > V) V = id + \cf3 1\cf0 ;\
+\
+            \cf4 // add definition\cf0 \
+            \cf4 // definitions.put(id, defn);\cf0 \
+            synsets.put(id, synset);\
+\
+            \cf4 // ignore synset for now\cf0 \
+            String[] nouns = synset.split(\cf5 " "\cf0 );\
+            \cf2 for\cf0  (String noun : nouns) \{\
+                \cf2 if\cf0  (!map.contains(noun))\
+                    map.put(noun, \cf2 new\cf0  SET<Integer>());\
+                map.get(noun).add(id);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab529\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 \
+\}\
+\
+
+\f2\fs26 \cf6 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec6 \
+\pard\pardeftab720\sl384
+\cf6 For each object that is not a 
+\f3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 String
+\f2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 , its 
+\f3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 toString()
+\f2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  method is called to convert it to a 
+\f3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 String
+\f2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 .\
+ For example, if you need to concatenate a large number of strings, appending to a 
+\f3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 StringBuilder
+\f2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  object is more efficient.\
+Although you add the 
+\f4\fs24 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 int
+\f2\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  values as primitive types, rather than 
+\f4\fs24 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Integer
+\f2\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  objects, to 
+\f4\fs24 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 li
+\f2\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 , the code compiles. Because 
+\f4\fs24 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 li
+\f2\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  is a list of 
+\f4\fs24 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Integer
+\f2\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  objects, not a list of 
+\f4\fs24 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 int
+\f2\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  values,
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Linked List\
+\
+public class Solution \{\
+	public ArrayList<Integer> rotateArray(ArrayList<Integer> A, int B) \{\
+		ArrayList<Integer> ret = new ArrayList<Integer>();\
+		for (int i = 0; i < A.size(); i++) \{\
+			ret.add(A.get((i + B) % A.size()));\
+		\}\
+		return ret;\
+	\}\
+\}\
+\
+\
+public class Solution \{\
+\
+	public ArrayList<Integer> rotateArray(ArrayList<Integer> A, int B) \{\
+\
+		ArrayList<Integer> ret =  new ArrayList<Integer>();\
+		for (int i = 0; i < A.size(); i++) \{\
+			ret.add( A.get( (i+B)%A.size()));\
+		\}\
+		return ret;\
+	\}\
+\
+\
+num1bits\
+GCD\
+LCM\
+\
+public class Solution \{\
+	public ArrayList<Integer> postorderTraversal(TreeNode a) \{\
+	    Stack<TreeNode> s1 = new Stack<>();\
+	    Stack<TreeNode> s2 = new Stack<>();\
+	    ArrayList<Integer> post = new ArrayList<Integer>();\
+	    TreeNode x;\
+	    \
+	    if (a == null) return null;\
+	    \
+	    s1.push(a);\
+\
+	    while(!s1.isEmpty()) \{\
+	        x = s1.pop();\
+	        s2.push(x);\
+	        \
+	        if (x.left != null)\
+	            s1.push(x.left);\
+	       \
+	        if (x.right != null)\
+	            s1.push(x.right);\
+	            \
+	    \}\
+	    \
+	    while(!s2.isEmpty()) \{\
+	        x = s2.pop();\
+	        post.add(x.val);\
+	    \}\
+	    \
+	    return post;\
+	\}\
+\}  \
+\
+\
+\
+\pard\pardeftab720\sl460
+
+\b\fs32 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 public
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 class
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Solution
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl380
+\cf8 	
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 public
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ArrayList
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Integer
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 >
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 postorderTraversal
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 TreeNode
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 A
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Stack
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 TreeNode
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 >
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ArrayList
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Integer
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 >
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 postorder
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 TreeNode
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack1
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 new
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Stack
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <>();
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack2
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 new
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Stack
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <>();
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 postorder
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 new
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ArrayList
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <>();
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 A
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null)
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 push
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 A
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 );
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 while
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (!
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 stack1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 isEmpty
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ())
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        \
+	        
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 pop
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ();
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 push
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 );
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 left
+\f5\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 !=
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null)
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	            
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 push
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 left
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 );
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	            \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 right
+\f5\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 !=
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null)
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	            
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 push
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 right
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 );
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 while
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (!
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 stack2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 isEmpty
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ())
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 stack2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 pop
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ();
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 postorder
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 add
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 val
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 );
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 postorder
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl460
+
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl380
+\cf8 \
+\
+\
+\pard\pardeftab720\sl460
+
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 public
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 class
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Solution
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl380
+\cf8 	
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 public
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 int
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 isSymmetric
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 TreeNode
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 A
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 A
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null)
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 0
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 rec
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 A
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 left
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 A
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 right
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ?
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 1
+\f5\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 0
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	\
+	\
+	
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 public
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 boolean
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 rec
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 TreeNode
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 TreeNode
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node1
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 &&
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node2
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null)
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 true;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node1
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ||
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node2
+\f5\fs28 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 null)
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 false;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 val
+\f5\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 !=
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 val
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	        
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 false;
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	    \
+	    
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 return
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 rec
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 left
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 right
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 &&
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 rec
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (
+\b0 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 node1
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 right
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  
+\f0\fs32 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 node2
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\b0 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 left
+\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 );
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	    \
+	
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+	\
+\pard\pardeftab720\sl460
+
+\f0\b\fs32 \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}\
+\
+\
+public class Solution \{\
+	public int isSymmetric(TreeNode a) \{\
+	    if (a == null) return 1;\
+	    \
+	    Queue<TreeNode> ql = new LinkedList<TreeNode>();\
+	    Queue<TreeNode> qr = new LinkedList<TreeNode>();\
+	    \
+	    ql.add(a.left);\
+	    qr.add(a.right);\
+	    \
+	    while (!ql.isEmpty() && !qr.isEmpty())\{\
+	        \
+	        TreeNode l = ql.remove();\
+	        TreeNode r = qr.remove();\
+	        \
+	        if (l == null && r == null) continue;\
+	        \
+	        if (l == null || r == null) return 0;\
+	        \
+	        if (l.val != r.val) return 0;\
+	   \
+            else \{ \
+                ql.add(l.left);\
+                qr.add(r.right);\
+                \
+                ql.add(l.right);\
+                qr.add(r.left);\
+                \
+            \}	   \
+	        \
+	        \
+	    \}\
+	    return 1;\
+	\}\
+\}
+\f5\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl380
+\cf8 \
+\pard\pardeftab720\sl440\qr
+
+\f0\fs32 \cf8 \cb12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Close
+\fs30 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl428
+\cf8 \cb13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 for\'a0this\'a0input\'a0"7\'a01\'a02\'a0-1\'a0-1\'a03\'a0-1\'a0-1"\'a0why\'a0is\'a0the\'a0minDepth\'a0not\'a02?\'a0The\'a0solution\'a0says\'a0it\'a0should\'a0be\'a0three,\'a0but\'a0if\'a0you\'a0just\'a0travel\'a0down\'a0the\'a0left\'a0side\'a0of\'a0the\'a0tree,\'a0you'll\'a0reach\'a0the\'a0closest\'a0leaf\'a0only\'a0using\'a02\'a0nodes,\'a0not\'a03.\'a0I'm\'a0a\'a0bit\'a0confused\'a0about\'a0this.
+\f5\fs28 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl440\qr
+
+\f0\fs32 \cf8 \cb12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Close
+\fs30 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
